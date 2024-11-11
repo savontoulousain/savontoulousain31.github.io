@@ -1,0 +1,785 @@
+<html><head><base href="." /><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.DAME TOULouse - Savons & Bougies Artisanales</title>
+<meta http-equiv="Cache-Control" content="max-age=31536000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&family=Great+Vibes&family=Libre+Baskerville:wght@700&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f8f4e9;
+}
+
+header h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 3.5rem;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+header {
+  background: linear-gradient(45deg, #d4b483, #e6c89c);
+  padding: 2rem;
+  text-align: center;
+  color: #947340;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.logo-container {
+  width: 80px;
+  height: 80px;
+  animation: float 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.water-drops {
+  animation: rotate 10s linear infinite;
+}
+
+.water-drops path {
+  fill: #87CEEB; /* Change from #947340 to light blue */
+}
+
+.soap-bubbles {
+  animation: float 4s ease-in-out infinite;
+}
+
+nav {
+  background: #947340;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: #f8f4e9;
+  text-decoration: none;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+}
+
+.hero {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1502082553048-f009c37129b9') center/cover;
+  color: #f8f4e9;
+  text-align: center;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: #f8f4e9;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+
+.product-card, .testimonial-card, .shipping-card, .google-review-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.price {
+  font-size: 1.5rem;
+  color: #947340;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.buy-button {
+  background: #947340;
+  color: #f8f4e9;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.buy-button:hover {
+  background: #b38d50;
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  background: #f8f4e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-banner {
+  background: #947340;
+  color: #f8f4e9;
+  text-align: center;
+  padding: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.shipping-info {
+  background: #e6c89c;
+  padding: 2rem;
+  text-align: center;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.payment-icon {
+  width: 60px;
+  height: 40px;
+  background: #f8f4e9;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.contact {
+  background: #e6c89c;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.social-links a {
+  margin: 0 1rem;
+  color: #947340;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #b38d50;
+}
+
+footer {
+  background: #947340;
+  color: #f8f4e9;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.testimonials {
+  padding: 4rem 2rem;
+  background: linear-gradient(45deg, #d4b483, #e6c89c);
+}
+
+.testimonials h2 {
+  text-align: center;
+  color: #947340;
+  margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  loading="lazy";
+}
+
+.stars {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.client-info {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.client-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e6c89c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #947340;
+  font-weight: bold;
+}
+
+.client-name {
+  font-weight: bold;
+  color: #947340;
+}
+
+.client-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.google-certification {
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.google-review-card {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.google-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #4285f4;
+  font-weight: 500;
+}
+
+.google-rating {
+  margin: 1rem 0;
+}
+
+.google-rating .stars {
+  color: #fbbc05;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.google-link {
+  display: inline-block;
+  color: #4285f4;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #4285f4;
+  border-radius: 20px;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.google-link:hover {
+  background: #4285f4;
+  color: white;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-icons a {
+  color: #947340;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #b38d50;
+  transform: scale(1.2);
+}
+
+.social-icons svg {
+  width: 32px;
+  height: 32px;
+}
+
+.shipping-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.shipping-option {
+  background: #f8f4e9;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.payment-highlight {
+  background: #947340;
+  color: #f8f4e9;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  display: inline-block;
+}
+
+.satisfaction-guarantee {
+  background: #947340;
+  color: #f8f4e9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#a-propos {
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+#a-propos[style*="display: none"] {
+    height: 0;
+    opacity: 0;
+}
+
+#a-propos[style*="display: block"] {
+    height: auto;
+    opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<div class="promo-banner">
+  🎉 Utilisez le code <strong>MDAME10</strong> pour -10% sur votre première commande !
+</div>
+
+<header>
+  <div class="logo-container">
+    <svg class="optimized-svg" viewBox="0 0 100 100">
+      <!-- Soap bar -->
+      <rect x="20" y="30" width="60" height="40" rx="8" fill="#f8f4e9" 
+            stroke="#947340" stroke-width="2"/>
+      
+      <!-- Water drops -->
+      <g class="water-drops">
+        <path d="M45 15 Q50 20 45 25 Q40 20 45 15" fill="#87CEEB"/>
+        <path d="M55 15 Q60 20 55 25 Q50 20 55 15" fill="#87CEEB"/>
+        <path d="M50 20 Q55 25 50 30 Q45 25 50 20" fill="#87CEEB"/>
+        <path d="M40 25 Q45 30 40 35 Q35 30 40 25" fill="#87CEEB"/>
+        <path d="M60 25 Q65 30 60 35 Q55 30 60 25" fill="#87CEEB"/>
+      </g>
+      
+      <!-- Soap texture -->
+      <path d="M30 40 Q50 45 70 40" stroke="#d4b483" fill="none" 
+            stroke-width="1.5"/>
+      <path d="M30 50 Q50 55 70 50" stroke="#d4b483" fill="none" 
+            stroke-width="1.5"/>
+      
+      <!-- Soap bubbles -->
+      <g class="soap-bubbles">
+        <circle cx="30" cy="75" r="3" fill="#f8f4e9" opacity="0.8"/>
+        <circle cx="40" cy="78" r="2" fill="#f8f4e9" opacity="0.6"/>
+        <circle cx="50" cy="76" r="4" fill="#f8f4e9" opacity="0.7"/>
+        <circle cx="60" cy="77" r="3" fill="#f8f4e9" opacity="0.8"/>
+        <circle cx="70" cy="75" r="2" fill="#f8f4e9" opacity="0.6"/>
+      </g>
+    </svg>
+  </div>
+  <div>
+    <h1>M.DAME TOULOUSE</h1>
+    <p>SAVONS & BOUGIES ARTISANALES NATURELS</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#a-propos">À propos</a>
+  <a href="#produits">Nos Produits</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="accueil">
+  <div>
+    <h2>Artisanat naturel & authentique</h2>
+    <p>Découvrez nos savons et bougies 100% naturels, faits main avec amour</p>
+  </div>
+</div>
+
+<section id="a-propos" style="display: none; background: #f8f4e9; padding: 4rem 2rem;">
+  <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <h2 style="color: #947340; font-size: 2.5rem; margin-bottom: 2rem;">Notre Histoire</h2>
+    
+    <div style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2rem;">
+      <h3 style="color: #947340; font-size: 1.8rem; margin-bottom: 1.5rem;">Une Passion Artisanale</h3>
+      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+        Née d'une passion pour les produits naturels et le savoir-faire artisanal, M.DAME TOULOUSE a vu le jour avec une mission claire : créer des savons et des bougies d'exception, en respectant les traditions ancestrales tout en innovant pour le bien-être de nos clients.
+      </p>
+      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+        Chaque produit est fabriqué à la main dans notre atelier toulousain, avec une attention particulière portée à la sélection des meilleures matières premières naturelles et biologiques.
+      </p>
+    </div>
+
+    <div style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+      <h3 style="color: #947340; font-size: 1.8rem; margin-bottom: 1.5rem;">Notre Engagement</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div>
+          <svg viewBox="0 0 24 24" width="48" height="48" style="margin: 0 auto 1rem;">
+            <path fill="#947340" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path fill="#f8f4e9" d="M10 13l-2-2 1-1 1 1 3-3 1 1z"/>
+          </svg>
+          <h4 style="color: #947340; margin-bottom: 1rem;">Qualité Premium</h4>
+          <p>Nous sélectionnons rigoureusement chaque ingrédient pour garantir des produits d'excellence.</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" width="48" height="48" style="margin: 0 auto 1rem;">
+            <path fill="#947340" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+          <h4 style="color: #947340; margin-bottom: 1rem;">Transparence Totale</h4>
+          <p>Nous partageons ouvertement nos processus de fabrication et la composition de nos produits.</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" width="48" height="48" style="margin: 0 auto 1rem;">
+            <path fill="#947340" d="M21 9c0-4.97-4.03-9-9-9S3 4.03 3 9c0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-4.31C18.16 16.67 21 13.17 21 9z"/>
+            <path fill="#f8f4e9" d="M12 4c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5z"/>
+          </svg>
+          <h4 style="color: #947340; margin-bottom: 1rem;">Production Locale</h4>
+          <p>Tous nos produits sont fabriqués à Toulouse, dans le respect des traditions artisanales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="produits">
+  <div class="product-card">
+    <div class="product-image">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <rect x="20" y="30" width="60" height="40" rx="5" fill="#d4b483"/>
+        <path d="M30 30 L50 20 L70 30" stroke="#947340" fill="none" stroke-width="3"/>
+        <text x="50" y="55" text-anchor="middle" fill="#947340" font-size="12">Lavande</text>
+      </svg>
+    </div>
+    <h3>Savon à la Lavande Bio</h3>
+    <p>Savon artisanal aux huiles essentielles de lavande bio de Provence</p>
+    <p>Ingrédients naturels : huile d'olive, huile de coco, beurre de karité</p>
+    <p class="price">8.50 €</p>
+    <button class="buy-button">Ajouter au panier</button>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path d="M40 20 L60 20 L65 80 L35 80 Z" fill="#e6c89c"/>
+        <path d="M45 35 Q50 50 55 35" stroke="#947340" fill="none" stroke-width="2"/>
+        <circle cx="50" cy="25" r="3" fill="#947340"/>
+      </svg>
+    </div>
+    <h3>Bougie Végétale Vanille</h3>
+    <p>Bougie 100% naturelle en cire de soja, parfumée à la vanille pure de Madagascar</p>
+    <p>Mèche en coton bio, sans paraffine</p>
+    <p class="price">12.90 €</p>
+    <button class="buy-button">Ajouter au panier</button>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <rect x="20" y="30" width="60" height="40" rx="5" fill="#e6c89c"/>
+        <path d="M30 40 Q50 60 70 40" fill="#d4b483"/>
+        <text x="50" y="55" text-anchor="middle" fill="#947340" font-size="12">Miel</text>
+      </svg>
+    </div>
+    <h3>Savon au Miel Local</h3>
+    <p>Savon nourrissant au miel artisanal de Toulouse</p>
+    <p>Enrichi en propolis et cire d'abeille biologique</p>
+    <p class="price">9.90 €</p>
+    <button class="buy-button">Ajouter au panier</button>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path d="M40 20 L60 20 L65 80 L35 80 Z" fill="#d4b483"/>
+        <path d="M45 35 Q50 50 55 35" stroke="#947340" fill="none" stroke-width="2"/>
+        <text x="50" y="55" text-anchor="middle" fill="#947340" font-size="12">Rose</text>
+      </svg>
+    </div>
+    <h3>Bougie Parfumée Rose</h3>
+    <p>Bougie artisanale aux pétales de rose séchés</p>
+    <p>Cire de soja, 30 heures de combustion</p>
+    <p class="price">14.90 €</p>
+    <button class="buy-button">Ajouter au panier</button>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <rect x="20" y="30" width="60" height="40" rx="5" fill="#d4b483"/>
+        <path d="M30 30 L50 20 L70 30" stroke="#947340" fill="none" stroke-width="3"/>
+        <text x="50" y="55" text-anchor="middle" fill="#947340" font-size="12">Orange</text>
+      </svg>
+    </div>
+    <h3>Savon Froid Orange & Cannelle</h3>
+    <p>Savon surgras fabriqué à froid aux huiles essentielles d'orange douce et cannelle</p>
+    <p>Purifiant et tonifiant, parfait pour le matin</p>
+    <p class="price">9.90 €</p>
+    <button class="buy-button">Ajouter au panier</button>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <rect x="20" y="30" width="60" height="40" rx="5" fill="#e6c89c"/>
+        <path d="M30 40 Q50 60 70 40" fill="#d4b483"/>
+        <text x="50" y="55" text-anchor="middle" fill="#947340" font-size="12">Argile</text>
+      </svg>
+    </div>
+    <h3>Savon Froid à l'Argile Verte</h3>
+    <p>Savon naturel fabriqué à froid enrichi en argile verte</p>
+    <p>Idéal pour les peaux mixtes et grasses</p>
+    <p class="price">8.90 €</p>
+    <button class="buy-button">Ajouter au panier</button>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path d="M40 20 L60 20 L65 80 L35 80 Z" fill="#d4b483"/>
+        <path d="M45 35 Q50 50 55 35" stroke="#947340" fill="none" stroke-width="2"/>
+        <text x="50" y="55" text-anchor="middle" fill="#947340" font-size="12">Jasmin</text>
+      </svg>
+    </div>
+    <h3>Bougie Parfumée Jasmin</h3>
+    <p>Bougie naturelle au parfum délicat de jasmin</p>
+    <p>Cire de soja, 40 heures de combustion</p>
+    <p class="price">16.90 €</p>
+    <button class="buy-button">Ajouter au panier</button>
+  </div>
+
+  <div class="product-card">
+    <div class="product-image">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path d="M40 20 L60 20 L65 80 L35 80 Z" fill="#e6c89c"/>
+        <path d="M45 35 Q50 50 55 35" stroke="#947340" fill="none" stroke-width="2"/>
+        <text x="50" y="55" text-anchor="middle" fill="#947340" font-size="12">Épices</text>
+      </svg>
+    </div>
+    <h3>Bougie Parfumée Épices d'Hiver</h3>
+    <p>Bougie aux senteurs chaudes de cannelle, girofle et orange</p>
+    <p>Cire végétale, 35 heures de combustion</p>
+    <p class="price">15.90 €</p>
+    <button class="buy-button">Ajouter au panier</button>
+  </div>
+</section>
+
+<section class="shipping-info">
+  <div class="shipping-card">
+    <h2>Livraison & Paiement</h2>
+    
+    <div class="payment-highlight">
+      💳 Paiement en 3x sans frais disponible sur tous vos achats
+    </div>
+    
+    <div class="payment-highlight">
+      🚚 Livraison GRATUITE dès 50€ d'achat !
+    </div>
+
+    <div class="satisfaction-guarantee">
+      ✨ 100% SATISFAIT OU REMBOURSÉ SOUS 14 JOURS
+    </div>
+    
+    <div class="shipping-options">
+      <div class="shipping-option">
+        <h3>La Poste</h3>
+        <p>Livraison à domicile</p>
+        <p>2-3 jours ouvrés</p>
+      </div>
+      
+      <div class="shipping-option">
+        <h3>Mondial Relay</h3>
+        <p>Point relais près de chez vous</p>
+        <p>2-4 jours ouvrés</p>
+      </div>
+      
+      <div class="shipping-option">
+        <h3>Colissimo</h3>
+        <p>Livraison express</p>
+        <p>1-2 jours ouvrés</p>
+      </div>
+    </div>
+  
+    <h3>Moyens de paiement acceptés</h3>
+    <div class="payment-methods">
+      <div class="payment-icon">
+        <svg viewBox="0 0 60 40" width="60" height="40">
+          <rect width="60" height="40" fill="#003087"/>
+          <text x="30" y="25" text-anchor="middle" fill="#fff" font-size="14">PayPal</text>
+        </svg>
+      </div>
+      <div class="payment-icon">
+        <svg viewBox="0 0 60 40" width="60" height="40">
+          <rect width="60" height="40" fill="#1a1f71"/>
+          <text x="30" y="25" text-anchor="middle" fill="#fff" font-size="14">CB</text>
+        </svg>
+      </div>
+    </div>
+    <p>Paiement 100% sécurisé</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contactez-nous</h2>
+  <div class="social-links">
+    <p>📱 Téléphone: <a href="tel:+33781729761">+33 7 81 72 97 61</a></p>
+    <p>✉️ Email: <a href="mailto:m.dame.artisal@gmail.com">m.dame.artisal@gmail.com</a></p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/m.dame_artisanal" title="Instagram">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/mdametoulouse" title="Facebook">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/mdametoulouse" title="YouTube">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+        </svg>
+      </a>
+      <a href="https://www.tiktok.com/@mdametoulouse" title="TikTok">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+        </svg>
+      </a>
+      <a href="https://twitter.com/mdametoulouse" title="X (Twitter)">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="https://www.snapchat.com/add/mdametoulouse" title="Snapchat">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M12.206 21.284c-.145 0-.283-.006-.424-.015a5.832 5.832 0 0 1-.959.085c-.99 0-1.765-.268-2.334-.531-.356-.162-.689-.316-.982-.316-.239 0-.484.083-.668.164-.246.107-.48.209-.838.209-.318 0-.669-.092-.835-.278-.132-.152-.276-.397-.276-.768 0-.278.246-.556.494-.795.191-.187.401-.364.591-.518.303-.244.582-.474.776-.682.106-.109.195-.224.27-.349.078-.134.124-.27.124-.406a.7.7 0 0 0-.261-.512c-.353-.353-.461-.489-.54-.6l-.039-.06c-.11-.143-.263-.412-.263-1.039 0-.259.052-.516.156-.771.398-.975 1.142-1.518 1.865-1.898a.995.995 0 0 0 .331-.285c.114-.156.153-.349.107-.538-.149-.591-.452-1.075-.869-1.391-.209-.156-.444-.25-.692-.25-.081 0-.157.012-.229.033-.076.022-.152.044-.229.044-.087 0-.171-.022-.247-.044a.752.752 0 0 0-.224-.033c-.411 0-.798.218-1.087.614-.321.442-.492.987-.492 1.564 0 .246.041.492.123.729a1.031 1.031 0 0 1 .067.334c0 .246-.202.447-.448.447-.285 0-.57-.246-.855-.734-.342-.59-.525-1.214-.525-1.813 0-.96.342-1.813 1.027-2.497C6.761 8.017 8.038 7.5 9.445 7.5c1.406 0 2.684.517 3.604 1.451.684.69 1.026 1.543 1.026 2.497 0 .599-.183 1.223-.531 1.813-.279.488-.565.734-.849.734-.246 0-.448-.201-.448-.447 0-.107.022-.224.067-.334.082-.237.123-.483.123-.729 0-.577-.171-1.122-.492-1.564-.285-.396-.682-.614-1.093-.614-.076 0-.146.011-.218.033-.076.022-.152.044-.24.044-.077 0-.153-.022-.229-.044a.752.752 0 0 0-.224-.033c-.253 0-.488.094-.697.25-.417.316-.72.8-.869 1.391-.046.188-.007.382.107.538.084.114.208.218.331.285.723.38 1.467.923 1.865 1.898.104.255.156.512.156.771 0 .627-.153.896-.263 1.039l-.039.06c-.079.111-.187.247-.54.6a.7.7 0 0 0-.261.512c0 .136.046.272.124.406.075.125.164.24.27.349.194.208.473.438.776.682.19.154.4.331.591.518.248.239.494.517.494.795 0 .371-.144.616-.276.768-.166.186-.517.278-.835.278-.358 0-.592-.102-.838-.209-.184-.081-.429-.164-.668-.164-.293 0-.626.154-.982.316-.569.264-1.344.531-2.334.531-.32 0-.637-.027-.959-.085-.141.009-.279.015-.424.015z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>Avis de nos clients</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Les savons sont d'une qualité exceptionnelle ! Ma peau est douce et hydratée. Je recommande particulièrement le savon à la lavande qui sent divinement bon."</p>
+      <div class="client-info">
+        <div class="client-avatar">SC</div>
+        <div>
+          <div class="client-name">Sophie C.</div>
+          <div class="client-date">15 janvier 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Les bougies sont magnifiques et le parfum est subtil et naturel. La livraison était rapide et l'emballage très soigné. Je suis conquise !"</p>
+      <div class="client-info">
+        <div class="client-avatar">ML</div>
+        <div>
+          <div class="client-name">Marie L.</div>
+          <div class="client-date">3 février 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Service client exemplaire et produits de grande qualité. J'apprécie particulièrement l'engagement écologique de la marque. À découvrir absolument !"</p>
+      <div class="client-info">
+        <div class="client-avatar">PD</div>
+        <div>
+          <div class="client-name">Pierre D.</div>
+          <div class="client-date">20 janvier 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="google-certification">
+  <div class="google-review-card">
+    <div class="google-badge">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#4285f4"/>
+        <path d="M10 17l5-5-5-5v10z" fill="#4285f4"/>
+      </svg>
+      <span>Google Avis Certifiés</span>
+    </div>
+    <div class="google-rating">
+      <div class="stars">★★★★★</div>
+      <p><strong>4.9/5</strong> basé sur <strong>127 avis</strong></p>
+    </div>
+    <a href="https://g.page/r/mdame-toulouse" class="google-link">Voir tous les avis Google</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 M.DAME TOULOUSE - Tous droits réservés</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutSection = document.getElementById('a-propos');
+    aboutSection.style.display = 'none';
+    
+    document.querySelector('a[href="#a-propos"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        if(aboutSection.style.display === 'none') {
+            aboutSection.style.display = 'block';
+            aboutSection.scrollIntoView({behavior: 'smooth'});
+        } else {
+            aboutSection.style.display = 'none';
+        }
+    });
+});
+</script>
+
+</body></html>
